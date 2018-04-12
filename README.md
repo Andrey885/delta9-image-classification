@@ -49,6 +49,8 @@ Click *download* button there. A folder *tensorflow-for poets-2* will be created
 
 Sort images by classes
 ============
+We need that step because that's how the retraining script is working. The output classes will be named after the folders.
+
 You may use file *sort.py* of this repository. For this install *shutil* package. Create a folder "photoes" in *tf_files* directory. The result must be 17 folders, each named after the class.
 
 The script only creates one folder. In this version we have to start it 17 times, each time manually writing the path in line *shutil.copy*
