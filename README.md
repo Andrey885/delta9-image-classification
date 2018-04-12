@@ -53,8 +53,6 @@ You may use file *sort.py* of this repository. For this install *shutil* package
 
 The script only creates one folder. In this version we have to start it 17 times, each time manually writing the path in line *shutil.copy*
 
-I'll put the output folder (*photoes*) here just in case.
-
 Run the retraining script
 ============
 Now everythin is ready. Open Anaconda prompt, *cd* to *tensorflow-for-poets-2* directory and run the following (it's one line):
