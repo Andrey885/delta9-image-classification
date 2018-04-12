@@ -43,22 +43,22 @@ Tensorflow is a popular framework for machine learning, and pandas provides work
 
 Downloading the scripts
 ============
-There is a wonderful repository of tensorflow called *tensorflow for poets* on github. https://github.com/googlecodelabs/tensorflow-for-poets-2
+There is a wonderful repository of tensorflow called *tensorflow for poets-2* on github. https://github.com/googlecodelabs/tensorflow-for-poets-2
 
-Click *download* button there. A folder *tensorflow-for poets* will appear in your home directory.
+Click *download* button there. A folder *tensorflow-for poets-2* will be created in your home directory.
 
 Sort images by classes
 ============
 You may use file *sort.py* of this repository. For this install *shutil* package. Create a folder "photoes" in *tf_files* directory. The result must be 17 folders, each named after the class.
 
-The script only creates one folder. In this version we have to start it 17 times, each time manually writing the path in line...
+The script only creates one folder. In this version we have to start it 17 times, each time manually writing the path in line *shutil.copy*
 
 I'll put the output folder (*photoes*) here just in case.
 
 Run the retraining script
 ============
 Now everythin is ready. Open Anaconda prompt, *cd* to *tensorflow-for-poets-2* directory and run the following (it's one line):
-python -m scripts.retrain 
+*python -m scripts.retrain 
 
 --bottleneck_dir=tf_files\bottlenecks 
 
@@ -72,7 +72,7 @@ python -m scripts.retrain
 
 --image_dir=tf_files\photoes
 
---learning_rate=0.01
+--learning_rate=0.01*
 
 The script will download the inception model to *model_dir*. Then it will start to create bottleneck files, which basically are the descriptions of every image. In CPU it will take a lot of time (about 6-8 hours), and only then the script will train the network. Once bottlenecks are ready, you can train other inception_v3 models with different parameters on them. You also my vary the number of traing steps and learning rate, and you may use other architectures(for example, write *mobilenet_1.0_224* instead of *inception_v3*. This net is smaller and works faster, but with less accuracy). The result is the file *retrained_graph.pb* - it's your model. You can analyze the net using *tensorboard*. Run the following:
 
@@ -86,8 +86,7 @@ Once the net is trained, you may test it running the following line (still in *t
 
 python -m scripts.label_image --graph=tf_files\retrained_graph.pb --image=tf_files\photoes\000000.jpg
 
-There might be errors depending on the model and image size, but they are fixed with *Stack Overflow*. Most likely are those:
-...
+The original folder *test* must be placed in *tensorflow-for-poets-2\tf_files*.
 
 In order to get the required result, run *label_csv* script. For inception_v3 model it will take about 8 hours to go through with it. Pay attention: the more time the net is working, the slower it gets (really, several times slower). So about every 200 images you shold save current results, interrupt the code with Ctrl+C and restart the code with other number.
 
@@ -99,5 +98,14 @@ After that, wait until the first alert *Saved, filename <n>*, interrupt the code
  
 where n is the same n which is the number of labeled images.
 
+Researching the net
+============
+In the final part of the presentation above there are images, describing, which parts of an image the net bases on while classifying. You may write the same thing, based on files *map0, map1* and *map2*
+
+*map0* makes images with cut black(or white) squares and saves them to  folder
+
+*map1* runs the net and makes a csv file with classifying results
+
+*map2* paints the red squares
 
   
