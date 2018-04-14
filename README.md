@@ -1,7 +1,7 @@
 # delta9-image-classification
 This repository describes how to solve an image classification problem on Windows 8.1, using Tensorflow. it's transfer learning from a popular net made by Google and called "inception".
 
-Originally, it's a set of steps I took in a Kaggle competition https://www.kaggle.com/c/delta9 (the final score is 0.937, but you may achieve more)
+Originally, it's a set of steps I took in a Kaggle competition https://www.kaggle.com/c/delta9 (the final score is 0.937, but you may achieve more varying the parameters)
 
 This guide in presentation format: https://docs.google.com/presentation/d/1TxEu8Xt8G9fhNi1tHI7-eT4vbbISf8zj5yPvw1EixUo/edit#slide=id.p
 
