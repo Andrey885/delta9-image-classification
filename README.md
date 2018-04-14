@@ -100,12 +100,13 @@ where n is the same n which is the number of labeled images.
 
 Researching the net
 ============
-In the final part of the presentation above there are images, describing, which parts of an image the net bases on while classifying. You may write the same thing, based on files *map0, map1* and *map2*
+In the final part of the presentation above there are images, describing, which parts of an image the net bases on while classifying (pay attention that those are not the ones containing the object itself!). You may write the same thing, based on files *map0, map1* and *map2*
 
 *map0* makes images with cut black(or white) squares and saves them to  folder
 
-*map1* runs the net and makes a csv file with classifying results
+*map1* runs the net and makes a csv file with classified results
 
 *map2* paints the red squares
+
 
   
