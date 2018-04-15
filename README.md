@@ -60,19 +60,19 @@ Run the retraining script
 Now everythin is ready. Open Anaconda prompt, *cd* to *tensorflow-for-poets-2* directory and run the following (it's one line):
 *python -m scripts.retrain *
 
-*--bottleneck_dir=tf_files\bottlenecks *
+* --bottleneck_dir=tf_files\bottlenecks *
 
-*--how_many_training_steps=4000 *
+* --how_many_training_steps=4000 *
 
-*--model_dir=tf_files\models*
+* --model_dir=tf_files\models*
 
-*--summaries_dir=tf_files\training_summaries\inception_v3*
+* --summaries_dir=tf_files\training_summaries\inception_v3*
 
-*--architecture=inception_v3*
+* --architecture=inception_v3*
 
-*--image_dir=tf_files\photoes*
+* --image_dir=tf_files\photoes*
 
-*--learning_rate=0.01*
+* --learning_rate=0.01*
 
 The script will download the inception model to *model_dir*. Then it will start to create bottleneck files, which basically are the descriptions of every image. In CPU it will take a lot of time (about 6-8 hours), and only then the script will train the network. Once bottlenecks are ready, you can train other inception_v3 models with different parameters on them. You also my vary the number of traing steps and learning rate, and you may use other architectures(for example, write *mobilenet_1.0_224* instead of *inception_v3*. This net is smaller and works faster, but with less accuracy). The result is the file *retrained_graph.pb* - it's your model. You can analyze the net using *tensorboard*. Run the following:
 
